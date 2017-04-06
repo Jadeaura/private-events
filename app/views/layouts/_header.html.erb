@@ -1,0 +1,11 @@
+<h1>HEADER</h1>
+<% if (user_id = session[:user_id]) %>
+	<% user = User.find_by(id: user_id) %>
+	<p>User: <%= user.name %></p>
+	<%= link_to "Log out", logout_path, method: "delete" %>
+	<%= link_to "Create event", new_event_path %>
+<% else %>
+	<%= link_to "Log in", login_path %>
+	<%= link_to "Sign up", new_user_path %>
+<% end %>
+<%= link_to "Events", events_path %>
