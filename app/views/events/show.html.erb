@@ -1,5 +1,5 @@
 <h1>SHOW EVENT</h1>
-<p>Host: <%= @event.creator.name %> | Location: <%= @event.location %></p>
+<p>Host: <%= @event.creator.name %> | Location: <%= @event.location %> | <%= @event.date.in_time_zone("Mountain Time (US & Canada)").strftime("%B %e, %l:%M%P") %></p>
 <%= @event.description %><hr><br>
 <%= form_for @attendance, url: attend_path do |f| %>
 	<%= f.hidden_field :attended_event_id, :value => @event.id %>
