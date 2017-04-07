@@ -1,5 +1,7 @@
 <h1>USER PROFILE</h1>
-<h3><%= @user.name %> Will be hosting the following events</h3><hr>
-<%= render @user.events.all %>
-<h3><%= @user.name %> Will be attending the following events</h3><hr>
-<%= render @user.attended_events %>
+<h3><%= @user.name %> is the host of the following events</h3><hr>
+<%= render @user.events %>
+<h3><%= @user.name %> will be attending the following events</h3><hr>
+<%= render @user.upcoming_events %>
+<h3><%= @user.name %> has attended the following events</h3><hr>
+<%= render @user.previous_events %>
