@@ -1,8 +1,8 @@
 <h1>SHOW EVENT</h1>
 <p>Host: <%= @event.creator.name %> | Location: <%= @event.location %></p>
-<%= @event.description %>
+<%= @event.description %><hr><br>
 <%= form_for @attendance, url: attend_path do |f| %>
 	<%= f.hidden_field :attended_event_id, :value => @event.id %>
 	<%= f.submit "Attend event" %>
-<% end %>
+<% end %><br>
 <p><%= render @event.attendees %></p>

@@ -4,7 +4,7 @@ class AttendancesController < ApplicationController
     if !@user.nil?
       @attendance = @user.user_event_maps.build(attendance_params)
       if @attendance.save
-        redirect_to @event unless !@event
+        redirect_to @user unless !@user
       else
         redirect_to 'events#index'
       end
